@@ -90,7 +90,7 @@ export default function AdkProductionDashboard() {
     ];
 
     // Add the detailed scenes first
-    blackPantherScenes.forEach((scene, index) => {
+    blackPantherScenes.forEach((scene) => {
       const sceneCard = document.createElement('div');
       sceneCard.className = 'scene-card';
       
@@ -2101,7 +2101,7 @@ export default function AdkProductionDashboard() {
                     <div className="requirements-list">
                       <h4>Main Characters Featured</h4>
                       <ul>
-                        <li><strong>T'CHALLA</strong> - Featured in all 100 scenes (speaking role)</li>
+                        <li><strong>T&apos;CHALLA</strong> - Featured in all 100 scenes (speaking role)</li>
                         <li><strong>SHURI</strong> - Featured in 50 scenes (speaking role)</li>
                       </ul>
                     </div>
@@ -2110,12 +2110,12 @@ export default function AdkProductionDashboard() {
                       <div className="metadata-item">
                         <h4>Two-Character Scenes</h4>
                         <div className="big-number">50</div>
-                        <p>T'Challa & Shuri</p>
+                        <p>T&apos;Challa & Shuri</p>
                       </div>
                       <div className="metadata-item">
                         <h4>Single Character Scenes</h4>
                         <div className="big-number">50</div>
-                        <p>T'Challa solo</p>
+                        <p>T&apos;Challa solo</p>
                       </div>
                       <div className="metadata-item">
                         <h4>Average Scene Hours</h4>

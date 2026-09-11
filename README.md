@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ADK Production Analysis Dashboard
 
-## Getting Started
+ASW is a single-page Next.js prototype that visualizes sample screenplay analysis and production-planning metrics for a Black Panther-themed data set.
 
-First, run the development server:
+## Core features
+
+- Production overview with script, scene, character, location, complexity, crew, and cost metrics.
+- Eighths-calculator presentation for 232 generated scene cards.
+- Scene-breakdown presentation with location, time, cast, crew, and technical details.
+- Department analysis and collapsible detail sections.
+- Fixed sidebar navigation with smooth scrolling between dashboard sections.
+- Responsive dashboard styling and light client-side interactions.
+
+## Technology stack
+
+- Next.js 15, React 19, and TypeScript
+- Tailwind CSS 4
+- App Router with a single client-rendered dashboard page
+
+## Prerequisites
+
+- Node.js and npm
+
+## Local setup
 
 ```bash
+git clone https://github.com/varunisrani/asw.git
+cd asw
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The development script runs Next.js with Turbopack, using `http://localhost:3000` by default.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Production commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+The repository also defines `npm run lint`.
 
-To learn more about Next.js, take a look at the following resources:
+## Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No environment variables are referenced by the application source.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project structure
 
-## Deploy on Vercel
+- `app/page.tsx` — all dashboard data, rendering, generated scene cards, and interactions.
+- `app/globals.css` — global presentation styles.
+- `app/layout.tsx` — Next.js root layout and metadata.
+- `logs/` — checked-in development/tool event logs; these are not consumed by the application.
+- `public/` — default static assets.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Status and limitations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This repository is a front-end demonstration, not a production analysis service. Its data is hard-coded or randomly generated in the browser, so values can change between renders and do not represent a parsed screenplay. Export Report and Settings are visual controls without implemented actions. There is no backend, persistence layer, environment configuration, or automated test script. The lint script uses `next lint`, which is not available in recent Next.js releases and may require updating.
